@@ -4,6 +4,12 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
+    
+    <data>
+        <variable
+            name="myName"
+            type="com.example.aboutme.MyName" />
+    </data>
 
 <LinearLayout
     android:layout_width="match_parent"
@@ -12,13 +18,12 @@
     android:paddingStart="@dimen/padding"
     android:paddingEnd="@dimen/padding"
     tools:context=".MainActivity">
-
-
+    
     <TextView
         android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/name"
+        android:text="@={myName.name}"
         android:textAlignment="center"
         style="@style/Style_textView" />
 
@@ -28,7 +33,8 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="@string/What_is_your_nick_name"
-        android:inputType="text" />
+        android:inputType="text"
+       />
 
     <Button
         android:id="@+id/doneButton"
@@ -46,7 +52,8 @@
         android:layout_height="wrap_content"
         android:textAlignment="center"
         android:visibility="gone"
-        style="@style/NameStyle"/>
+        style="@style/NameStyle"
+        android:text="@={myName.nickname}"/>
 
     <ImageView
         android:id="@+id/big_star"
